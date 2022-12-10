@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 
 class List
 {
@@ -9,7 +10,7 @@ class List
 
         Node(int val)
             :value(val)
-            ,next(nullptr)
+            , next(nullptr)
         {}
     };
 
@@ -34,40 +35,104 @@ class List
 public:
     List()
         :head(nullptr)
-        ,tail(nullptr)
-        ,listSize(0)
+        , tail(nullptr)
+        , listSize(0)
     {}
 
     List(size_t size)
         :head(nullptr)
-        ,tail(nullptr)
-        ,listSize(size)
+        , tail(nullptr)
+        , listSize(size)
     {
         if (size)
         {
-            head = new Node{0};
+            head = new Node{ 0 };
             Node* current = head;
             for (size_t i = 0; i < size - 1; i++)
             {
-                current->next = new Node{0};
+                current->next = new Node{ 0 };
                 current = current->next;
             }
         }
     }
 
-    bool empty();//if list empty - true
+    bool empty() {//if list empty - true
+        return head == nullptr;
+    }
 
-    void append(int val);//pushing new element in list
+    void append(int val) {//pushing new element in list
+        Node* temp = new Node(val);
 
-    void remove();//remove from list
+        if (empty())
+        {
+            head = temp;
+            tail = temp;
+            return;
+        }
 
-    void setAt(size_t index, int value);//function for changing element at "index" pos
+        head->next = temp;
+        head = temp;
 
-    int size();//return listSize
+        listSize++;
+    }
 
-    void del(int pos);//delete Node at pos
+    void remove() {//remove from list
+        Node* temp = head->next;
 
-    void output();//output of List
+        delete head;
+
+        head = temp;
+
+        listSize--;
+    }
+
+    void setAt(size_t index, int value) {//function for changing element at "index" pos
+        size_t currentIndex = 0;
+        Node* current = head;
+
+        while (current)
+        {
+            if (index == currentIndex)
+            {
+                current->value = value;
+                break;
+            }
+
+            ++currentIndex;
+            current = current->next;
+        }
+    }
+    int size() {//return listSize
+        return listSize;
+    }
+
+    void del(int pos) {//delete Node at pos
+        Node* temp1 = head->next;
+        Node* temp2 = nullptr;
+
+        for (int i = 0; i < pos; ++i)
+        {
+            temp2 = temp1;
+            temp1 = temp1->next;
+        }
+
+        if (temp2 != nullptr) {
+            temp2 = temp1->next;
+        }
+
+        delete temp1;
+    }
+
+    void output() {//output of List
+        Node* out = head;
+
+        while (out)
+        {
+            std::cout << out->value << ' ';
+        }
+
+        std::cout << std::endl;
+    }
 
     ~List()
     {

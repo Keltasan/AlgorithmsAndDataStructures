@@ -141,13 +141,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="functions.cpp" />
-    <ClCompile Include="List.cpp" />
-    <ClCompile Include="Stack.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions.h" />
+    <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>

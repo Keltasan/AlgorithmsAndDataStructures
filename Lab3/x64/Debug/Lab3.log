@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\Keltasar\Documents\ИСиТ 2 курс 1 сем\АиСД\AlgorithmsAndDataStructures\Lab3\BinTree.h(278): warning C4715: BinTree::preOrder: значение возвращается не при всех путях выполнения
+C:\Users\Keltasar\Documents\ИСиТ 2 курс 1 сем\АиСД\AlgorithmsAndDataStructures\Lab3\AVL.h(233): warning C4715: AVL::preOrder: значение возвращается не при всех путях выполнения
+C:\Users\Keltasar\Documents\ИСиТ 2 курс 1 сем\АиСД\AlgorithmsAndDataStructures\Lab3\AVL.h(257): warning C4715: AVL::postOrder: значение возвращается не при всех путях выполнения
+C:\Users\Keltasar\Documents\ИСиТ 2 курс 1 сем\АиСД\AlgorithmsAndDataStructures\Lab3\AVL.h(245): warning C4715: AVL::inOrder: значение возвращается не при всех путях выполнения
+  Lab3.vcxproj -> C:\Users\Keltasar\Documents\ИСиТ 2 курс 1 сем\АиСД\AlgorithmsAndDataStructures\x64\Debug\Lab3.exe
